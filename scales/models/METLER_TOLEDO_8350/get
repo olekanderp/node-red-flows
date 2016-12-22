@@ -1,0 +1,1 @@
+[{"id":"e0855a8a.a21868","type":"function","z":"bb301330.e519d","name":"","func":"var v = msg.payload;\nv = v.replace('2UB','');\nv = v.replace(String.fromCharCode(2),'');\nv = v.replace(String.fromCharCode(3),'');\nflow.set('v', Number(v));\n\nreturn msg;","outputs":1,"noerr":0,"x":640,"y":80,"wires":[[]]}]

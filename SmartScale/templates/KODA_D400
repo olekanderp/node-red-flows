@@ -1,14 +1,1 @@
-{
-    'inject':"XB",
-    'parser':function(v){
-            
-            var v = msg.payload;
-            v = v.replace('kg','');
-            v = v.replace('B','');
-            v = v.replace(' ','');
-            v = v.replace('\n','');
-            v = v.replace('\r','');
-            
-            return v;
-        }
-}
+[{"id":"c90ee0ee.d82f2","type":"inject","z":"e3fe980e.2b5a98","name":"init","topic":"","payload":"init","payloadType":"str","repeat":"","crontab":"","once":true,"x":106,"y":45,"wires":[["69a4f7d6.33b4d8"]]},{"id":"69a4f7d6.33b4d8","type":"function","z":"e3fe980e.2b5a98","name":"init flow vars","func":"var p = {\n    'smartScaleURL':'http://10.1.132.171/preBI/hs/api/v1/weights?token=5af8e4eb-c54a-40ab-8755-b6e154d9a7d1&encoding=utf8',\n    'smartScaleMethod':'POST',\n    'organizationName':'Супрунівська дільниця',\n    'organizationID':'11',\n    'typeOfScale':'IoT',\n    'source':'atom',\n    'scale':'su_avto2_80t',\n    'dblogin':'atom2',\n    'dbpassword':'123',\n    'log':1,\n    'socketport':'4001',\n    'ip':'10.3.1.5',\n    'inject':\"XB\",\n    'parser':function(v){\n            \n            v = v.replace('kg','');\n            v = v.replace('B','');\n            v = v.replace(' ','');\n            v = v.replace('\\n','');\n            v = v.replace('\\r','');\n            \n            return v;\n        }\n}\nflow.set('p',p);","outputs":1,"noerr":0,"x":266,"y":45,"wires":[["f95eddae.272c3"]]},{"id":"f95eddae.272c3","type":"debug","z":"e3fe980e.2b5a98","name":"","active":false,"console":"false","complete":"payload","x":466,"y":45,"wires":[]}]

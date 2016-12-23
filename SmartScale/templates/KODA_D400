@@ -1,0 +1,14 @@
+{
+    'inject':"XB",
+    'parser':function(v){
+            
+            var v = msg.payload;
+            v = v.replace('kg','');
+            v = v.replace('B','');
+            v = v.replace(' ','');
+            v = v.replace('\n','');
+            v = v.replace('\r','');
+            
+            return v;
+        }
+}

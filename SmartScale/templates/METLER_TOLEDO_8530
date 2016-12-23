@@ -1,12 +1,1 @@
-{
-    'inject':String.fromCharCode(2)+"2UB",
-    'parser':function(v){
-            
-            v = v.replace('2UB','');
-            v = v.replace(String.fromCharCode(2),'');
-            v = v.replace(String.fromCharCode(3),'');
-            v = Number(v);
-            
-            return v;
-        }
-}
+[{"id":"3fa46bef.bf9104","type":"comment","z":"bb301330.e519d","name":"Init global vars","info":"","x":120,"y":20,"wires":[]},{"id":"d4658a9b.2be948","type":"inject","z":"bb301330.e519d","name":"init","topic":"","payload":"init","payloadType":"str","repeat":"","crontab":"","once":true,"x":110,"y":60,"wires":[["9ca0f04e.3a79"]]},{"id":"9ca0f04e.3a79","type":"function","z":"bb301330.e519d","name":"init flow vars","func":"var p = {\n    'smartScaleURL':'http://10.1.132.171/preBI/hs/api/v1/weights?token=5af8e4eb-c54a-40ab-8755-b6e154d9a7d1&encoding=utf8',\n    'smartScaleMethod':'POST',\n    'organizationName':'Супрунівська дільниця',\n    'organnizationID':'11',\n    'typeOfScale':'IoT',\n    'source':'atom',\n    'scale':'su_avto_80t',\n    'dblogin':'atom2',\n    'dbpassword':'123',\n    'inject':String.fromCharCode(2)+\"2UB\",\n    'log':1,\n    'socketport':'4001',\n    'ip':'10.3.4.213',\n    'parser':function(v){\n    \n            v = v.replace('2UB','');\n            v = v.replace(String.fromCharCode(2),'');\n            v = v.replace(String.fromCharCode(3),'');\n            v = Number(v);\n    \n            return v;\n        }\n}\nflow.set('p',p);","outputs":1,"noerr":0,"x":270,"y":60,"wires":[["d283da0c.8b9318"]]},{"id":"d283da0c.8b9318","type":"debug","z":"bb301330.e519d","name":"","active":false,"console":"false","complete":"payload","x":470,"y":60,"wires":[]}]
